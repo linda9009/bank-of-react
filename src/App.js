@@ -5,7 +5,7 @@ import LogIn from './components/Login';
 import Debits from './components/Debits';
 // import Credits from './components/Credits';
 import UserProfile from './components/UserProfile';
-import axios from "axios";
+// import axios from "axios";
 
 class App extends Component {
 
@@ -41,8 +41,8 @@ class App extends Component {
             <Route exact path="/" render={HomeComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/login" render={LogInComponent}/>
-            <Route exact path="/debits" render={DebitsComponent}/>  
-            <Route exact path="/credits" render={CreditComponent}/>
+            {/* <Route exact path="/debits" render={DebitsComponent}/>  
+            <Route exact path="/credits" render={CreditComponent}/> */}
             </div>
         </Router>
     );
