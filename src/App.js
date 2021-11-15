@@ -38,7 +38,7 @@ class App extends Component {
     return (
         <Router>
           <div>
-            <Route exact path="/" render={HomeComponent}/>
+            <Route exact path="/bank-of-react" render={HomeComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/login" render={LogInComponent}/>
             {/* <Route exact path="/debits" render={DebitsComponent}/>  
