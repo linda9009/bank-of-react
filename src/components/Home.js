@@ -6,11 +6,14 @@ class Home extends Component {
   render() {
     return (
         <div>
-          <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank"/>
+          <img src="https://www.india.com/wp-content/uploads/2016/11/Banks-1.jpg" alt="bank"/>
+          {/* changed image, original link did not work; was not secure */}
           <h1>Bank of React</h1>
-
-          <Link to="bank-of-react/userProfile">User Profile</Link>
-
+          <Link to="./Login">Login</Link>
+          <Link to="./userProfile">User Profile</Link>
+          <Link to="./Debits">Debits</Link>
+          <Link to="./Credits">Credits</Link>
+          <h2>Account Balance</h2>
           <AccountBalance accountBalance={this.props.accountBalance}/>
         </div>
     );
