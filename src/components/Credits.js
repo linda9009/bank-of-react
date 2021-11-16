@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
 import AccountBalance from './AccountBalance';
+import {Link} from 'react-router-dom';
+
 
 class Credits extends Component {
   constructor () {
@@ -52,7 +53,18 @@ creditsView = () => {
              <input type="number" name="amount" onChange={this.updateAmount}/>
              <button type="submit">Add Credit</button>
            </form>
+           <div>
+          <Link to="./Login">Login</Link>
+          <Link to="./userProfile">User Profile</Link>
+          <Link to="./Debits">Debits</Link>
+          <Link to="./Credits">Credits</Link>
+          <Link to="./">Home</Link>
+          <h2>Account Balance</h2>
+          <AccountBalance accountBalance={this.props.accountBalance}/>
+        </div>
     	</div>
+      
+      
     );
     }
 }
