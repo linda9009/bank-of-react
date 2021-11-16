@@ -53,12 +53,16 @@ addDebit = (e) => {
 }
 
 addCredit = (e) => {
-  //send to credits view via props
-  //updates state based off user input
-  e.preventDefault();
-  const description  = e.target[0].value;
-  const amount  = Number(e.target[1].value);
-  console.log(description, amount);
+  let newCredits = [...this.state.credits]
+  let newCredit = {
+    'description': e.description,
+    'amount': e.amount,
+    'date': e.date
+  }
+  newCredits.push(newCredit);
+  let newBalance = this.state.accountBalance - e.amount
+  this.setState({credits: newCredits})
+  this.setState({accountBalance:  newBalance})
 }
   mockLogIn = (logInInfo) => {
     const newUser = {...this.state.currentUser}
