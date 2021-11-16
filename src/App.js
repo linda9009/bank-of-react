@@ -51,6 +51,15 @@ addDebit = (e) => {
   const amount  = Number(e.target[1].value);
   console.log(description, amount);
 }
+
+addCredit = (e) => {
+  //send to credits view via props
+  //updates state based off user input
+  e.preventDefault();
+  const description  = e.target[0].value;
+  const amount  = Number(e.target[1].value);
+  console.log(description, amount);
+}
   mockLogIn = (logInInfo) => {
     const newUser = {...this.state.currentUser}
     newUser.userName = logInInfo.userName
@@ -60,6 +69,8 @@ addDebit = (e) => {
   render() {
     const { debits } = this.state;
     const DebitsComponent = () => (<Debits addDebit={this.addDebit} debits={debits} />);
+    const { credits } = this.state;
+    const CreditsComponent = () => (<Credits addCredit={this.addCredit} credits={credits} />);
     const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
     const UserProfileComponent = () => (
         <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
@@ -73,7 +84,7 @@ addDebit = (e) => {
             <Route exact path="/bank-of-react/userProfile" render={UserProfileComponent}/>
             <Route exact path="/bank-of-react/login" render={LogInComponent}/>
             <Route exact path="/bank-of-react/debits" render={DebitsComponent}/>  
-            <Route exact path="/credits" render={CreditComponent}/>
+            <Route exact path="/bank-of-react/credits" render={CreditsComponent}/>
             </div>
         </Router>
     );
