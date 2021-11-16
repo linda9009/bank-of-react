@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
 import LogIn from './components/Login';
 import Debits from './components/Debits';
-// import Credits from './components/Credits';
+import Credits from './components/Credits';
 import UserProfile from './components/UserProfile';
 import axios from "axios";
 
@@ -73,7 +73,7 @@ addDebit = (e) => {
             <Route exact path="/bank-of-react/userProfile" render={UserProfileComponent}/>
             <Route exact path="/bank-of-react/login" render={LogInComponent}/>
             <Route exact path="/bank-of-react/debits" render={DebitsComponent}/>  
-            {/* <Route exact path="/credits" render={CreditComponent}/> */}
+            <Route exact path="/credits" render={CreditComponent}/>
             </div>
         </Router>
     );
