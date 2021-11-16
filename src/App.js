@@ -68,14 +68,14 @@ addCredit = (e) => {
   
   render() {
     const { debits } = this.state;
-    const DebitsComponent = () => (<Debits addDebit={this.addDebit} debits={debits} />);
+    const DebitsComponent = () => (<Debits addDebit={this.addDebit} debits={debits} accountBalance={this.state.accountBalance}/>);
     const { credits } = this.state;
-    const CreditsComponent = () => (<Credits addCredit={this.addCredit} credits={credits} />);
+    const CreditsComponent = () => (<Credits addCredit={this.addCredit} credits={credits} accountBalance={this.state.accountBalance}/>);
     const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
     const UserProfileComponent = () => (
-        <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
+        <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} accountBalance={this.state.accountBalance} />
     );
-    const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />);
+    const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} accountBalance={this.state.accountBalance} />);
 
     return (
         <Router>
