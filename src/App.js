@@ -64,9 +64,10 @@ addCredit = (e) => {
     'date': e.date
   }
   newCredits.push(newCredit);
-  let newBalance = this.state.accountBalance + e.amount
+  let addBalance = (this.state.accountBalance + +e.amount)
   this.setState({credits: newCredits})
-  this.setState({accountBalance:  newBalance})
+  this.setState({accountBalance:  addBalance})
+  console.log(this.state.accountBalance)
 }
   mockLogIn = (logInInfo) => {
     const newUser = {...this.state.currentUser}
