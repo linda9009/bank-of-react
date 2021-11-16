@@ -44,12 +44,16 @@ class App extends Component {
 
 
 addDebit = (e) => {
-  //send to debits view via props
-  //updates state based off user input
-  e.preventDefault();
-  const description  = e.target[0].value;
-  const amount  = Number(e.target[1].value);
-  console.log(description, amount);
+  let newDebits = [...this.state.debits]
+  let newDebit = {
+    'description': e.description,
+    'amount': e.amount,
+    'date': e.date
+  }
+  newDebits.push(newDebit);
+  let newBalance = this.state.accountBalance - e.amount
+  this.setState({debits: newDebits})
+  this.setState({accountBalance:  newBalance})
 }
 
 addCredit = (e) => {
