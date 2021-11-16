@@ -64,7 +64,7 @@ addCredit = (e) => {
     'date': e.date
   }
   newCredits.push(newCredit);
-  let newBalance = this.state.accountBalance - e.amount
+  let newBalance = this.state.accountBalance + e.amount
   this.setState({credits: newCredits})
   this.setState({accountBalance:  newBalance})
 }
