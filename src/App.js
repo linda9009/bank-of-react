@@ -6,6 +6,8 @@ import Debits from './components/Debits';
 import Credits from './components/Credits';
 import UserProfile from './components/UserProfile';
 import axios from "axios";
+import './App.css';
+
 
 class App extends Component {
 
